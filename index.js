@@ -1,9 +1,6 @@
-/*let Kenya = document.querySelector("#Kenya");
-let kenyaDate = document.querySelector("#date");
-//let KenyaTime = document.querySelector("#time");
-kenyaDate.innerHTML = moment().format("dddd MMMM Do YYYY");*/
+
  function updateTime() {
-        let Kenya = document.querySelector("#Kenya");
+       
         let kenyaDate = document.querySelector(".date");
         kenyaDate.innerHTML = moment().tz("Africa/Nairobi").format("dddd MMMM Do YYYY");
         let KenyaTime = document.querySelector(".time");
@@ -21,7 +18,33 @@ kenyaDate.innerHTML = moment().format("dddd MMMM Do YYYY");*/
         let Pmam = moment().tz("America/Chicago").format("A");
         chicagoTime.innerHTML = `${rightChicagoTime} <small>${Pmam}</small>`;
     }
-     document.addEventListener("DOMContentLoaded",updateTime);
+
+    document.addEventListener("DOMContentLoaded",updateTime);
      setInterval(updateTime, 1000);
+     
+
+
+     function updateCity(event){
+     let cityTimeZone = event.target.value;
+     let cityName = cityTimeZone.split("/")[1];
+     let cityDate = moment().tz(cityTimeZone).format("dddd MMMM Do YYYY");
+     let cityTime = moment().tz(cityTimeZone).format("h:mm:ss");
+     let mPam = moment().tz("America/Chicago").format("A");
 
      
+     let cities = document.querySelector("#cities");
+     cities.innerHTML = `<div class="city">
+        <div>
+        <h2>${cityName}</h2>
+        <p class="date">${cityDate}</p>
+        </div>
+        <div class="selectTime" >${cityTime}<small>${mPam}</small></div>
+    </div>`
+     
+     }
+
+     
+     document.addEventListener("change", updateCity);
+     
+
+    

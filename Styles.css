@@ -40,6 +40,16 @@ h1{
     font-weight: bolder;
 }
 
+.selectTime{
+    padding-top: 25px;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.selectTime small{
+    font-size: 14px;
+}
+
 .time small{
     font-size: 14px;
 }
