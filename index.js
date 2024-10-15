@@ -17,6 +17,15 @@
         let rightChicagoTime = moment().tz("America/Chicago").format("h:mm:ss");
         let Pmam = moment().tz("America/Chicago").format("A");
         chicagoTime.innerHTML = `${rightChicagoTime} <small>${Pmam}</small>`;
+
+        //Asia/Bangkok
+        let Bangkok = document.querySelector("#Bangkok");
+        let BangkokDate = document.querySelector("#Bangkokdate");
+        BangkokDate.innerHTML = moment().tz("Asia/Bangkok").format("dddd MMMM Do YYYY");
+        let BangkokTime = document.querySelector("#Bangkoktime");
+        let rightBangkokTime = moment().tz("Asia/Bangkok").format("h:mm:ss");
+        let PmAm = moment().tz("Asia/Bangkok").format("A");
+        BangkokTime.innerHTML = `${rightBangkokTime} <small>${PmAm}</small>`;
     }
 
     document.addEventListener("DOMContentLoaded",updateTime);
